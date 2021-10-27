@@ -20,3 +20,8 @@ yarn test -- --headed
 yarn test -- --browser=firefox
 yarn test -- --browser=all
 ```
+
+Run a specific test
+```sh
+ yarn test -- tests/uniswap.spec.ts
+``` 
