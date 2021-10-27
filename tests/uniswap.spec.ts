@@ -1,16 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { collectDefaultMetrics, register, Gauge } from 'prom-client'
-
-const PROMETHEUS_PREFIX = 'cowswap_'
-const NETWORK = process.env.NETWORK || 'mainnet'
-const PROMETHEUS_LABEL_REFERENCE = 'uniswap'
-
-collectDefaultMetrics({ register, prefix: PROMETHEUS_PREFIX, labels: { NETWORK } })
-const gauge = new Gauge({
-  name: 'price_different_percent',
-  help: 'Shows the relationsh between CowSwap price and other service prices',
-  labelNames: ['reference']
-});
  
 test('Compare price with uniswap', async ({ page }) => {
     // Cowswap
@@ -47,9 +35,4 @@ test('Compare price with uniswap', async ({ page }) => {
     const differenceToUniswap = Math.abs(cowswapPrice - uniswapPrice) / cowswapPrice * 100;
     console.log(differenceToUniswap);
     // expect(differenceToUniswap).toBeLessThanOrEqual(3);
-
-    // Set prometheus metric
-    gauge.set({ reference: PROMETHEUS_LABEL_REFERENCE }, differenceToUniswap)
-
-    register.metrics().then(console.log)
 });
