@@ -1,0 +1,11 @@
+{
+  "name": "cowswap-e2e",
+  "version": "0.0.1",
+  "description": "End to end tests and monitoring of CowSwap",
+  "repository": "git@github.com:gnosis/cowswap-e2e.git",
+  "homepage": ".",
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.16.1"
+  }
+}
