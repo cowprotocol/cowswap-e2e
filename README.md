@@ -13,3 +13,10 @@ npx playwright install
 ```sh
 yarn test
 ```
+
+Alternative:
+```sh
+yarn test -- --headed
+yarn test -- --browser=firefox
+yarn test -- --browser=all
+```
