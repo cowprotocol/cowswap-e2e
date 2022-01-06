@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "End to end tests and monitoring of CowSwap",
   "repository": "git@github.com:gnosis/cowswap-e2e.git",
+  "license": "(MIT OR Apache-2.0)",
   "homepage": ".",
   "private": true,
   "devDependencies": {
